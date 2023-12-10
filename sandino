@@ -13,14 +13,6 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
     Icon = "rbxassetid://15593571720" -- Replace with the actual asset ID for your icon
 })
 
--- Additional welcome notification crediting Jude and Silent Caliber
-game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "Credits",
-    Text = "This Hub was made by Jude and Silent Caliber.",
-    Icon = "rbxassetid://15593571720", -- Replace with the actual asset ID for your icon
-    Duration = math.huge
-})
-
 -- Wait for 5 seconds
 wait(5)
 
@@ -50,7 +42,7 @@ else
         Icon = "rbxassetid://15593571720"
     })
 
-    wait(1) 
+    wait(1)
 
     -- Display a notification with the list of supported games
     game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -63,12 +55,15 @@ end
 -- Create a notification with the current time
 local currentTimeNotification = game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "Current Time Notification", -- Required
-    Text = "Current Time: " .. getCurrentTime(), 
-    Duration = math.huge, -- Set duration to math.huge
-    Icon = "rbxassetid://15593571720" 
+    Text = "Current Time: " .. getCurrentTime(),
+    Duration = math.huge, -- Set duration to 5 seconds
+    Icon = "rbxassetid://15593571720"
 })
 
--- Loop to update the notification with the current time every second
-while wait(1) do
-    currentTimeNotification.Text = "Current Time: " .. getCurrentTime()
-end
+-- Additional welcome notification crediting Jude and Silent Caliber
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Credits",
+    Text = "This Hub was made by Jude and Silent Caliber.",
+    Icon = "rbxassetid://15593571720", -- Replace with the actual asset ID for your icon
+    Duration = math.huge
+})
